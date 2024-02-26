@@ -1,20 +1,16 @@
 
-server:
-  port: 9001
 
 spring:
   application:
     name: sms-admin-application
+
   cloud:
     config:
-      server:
-        discovery:
-          enabled: true
-          serviceId: sms-config-server
-        fail-fast: true
-        retry:
-          initialInterval: 2000
-          maxAttempts: 30
+      uri: http://localhost:7000
+
+#          enabled: true
+#          serviceId: sms-config-server
+
 #  mvc:
 #    servlet:
 #      load-on-startup: 1
@@ -28,14 +24,3 @@ eureka:
     registryFetchIntervalSeconds: 1
   instance:
     leaseRenewalIntervalInSeconds: 1
-#spring:
-#  application:
-#    name: spring-cloud-eureka-client
-#server:
-#  port: 9001
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-#  instance:
-#    preferIpAddress: true
